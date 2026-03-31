@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Биньковский Р.О. - Личный сайт</title>
+    <style>
+        /* ДИЗАЙН САЙТА (Черно-бело-серый стиль) */
+        body {
+            background-color: #111111; /* Черный фон */
+            color: #eeeeee; /* Светлый текст */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Верхнее меню */
+        header {
+            background-color: #000000;
+            border-bottom: 1px solid #333333;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .menu-btn {
+            background: transparent;
+            color: #888888;
+            border: 1px solid #333333;
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .menu-btn:hover, .menu-btn.active {
+            color: #ffffff;
+            border-color: #ffffff;
+            background-color: #222222;
+        }
+
+        /* Основной контент */
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        /* Скрываем страницы по умолчанию */
+        .page {
+            display: none;
+        }
+
+        /* Показываем активную страницу */
+        .page.show {
+            display: block;
+            animation: fadeEffect 1s;
+        }
+
+        @keyframes fadeEffect {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        h1 {
+            font-size: 32px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #aaaaaa;
+            font-size: 20px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #cccccc;
+        }
+
+        /* Блоки с информацией */
+        .info-box {
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Форма контактов */
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            background-color: #000;
+            border: 1px solid #333;
+            color: #fff;
+            box-sizing: border-box; /* Чтобы поля не вылезали */
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #fff;
+        }
+
+        button.submit-btn {
+            background-color: #fff;
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button.submit-btn:hover {
+            background-color: #ccc;
+        }
+
+        .contact-link {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
+        }
+        
+        .contact-link:hover {
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Меню навигации -->
+    <header>
+        <button class="menu-btn active" onclick="openPage('page1', this)">ОБО МНЕ</button>
+        <button class="menu-btn" onclick="openPage('page2', this)">КОНТАКТЫ</button>
+    </header>
+
+    <div class="container">
+        
+        <!-- СТРАНИЦА 1: ОБО МНЕ -->
+        <div id="page1" class="page show">
+            <h1>Биньковский Роман Олегович</h1>
+            <h2>Индивидуальный предприниматель, владелец крупного маркетплейса</h2>
+            
+            <div class="info-box">
+                <p><strong>Обо мне:</strong></p>
+                <p>Я занимаюсь развитием электронной коммерции более 10 лет. Мой путь начался с небольшого магазина, который я превратил в технологическую платформу федерального масштаба.</p>
+                <p>Моя философия — это честный бизнес, прозрачные условия для партнеров и постоянное развитие технологий. Я верю, что качественный сервис — это главный актив компании.</p>
+            </div>
+
+            <div class="info-box">
+                <p><strong>Достижения:</strong></p>
+                <ul>
+                    <li>Основатель маркетплейса с оборотом более 1 млрд рублей.</li>
+                    <li>Управляющая команда более 200 человек.</li>
+                    <li>Партнерство с ведущими логистическими операторами страны.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- СТРАНИЦА 2: КОНТАКТЫ -->
+        <div id="page2" class="page">
+            <h1>Контактная информация</h1>
+            
+            <div class="info-box">
+                <p>Свяжитесь со мной любым удобным способом:</p>
+                <a href="https://t.me/distressonly" class="contact-link">Telegram: @distressonly</a>
+                <a href="tel:+79525502602" class="contact-link">Телефон: +7 (952) 550-26-02</a>
+            </div>
+
+            <div class="info-box">
+                <h2>Написать сообщение</h2>
+                <form onsubmit="alert('Спасибо! Сообщение отправлено.'); return false;">
+                    <label>Ваше имя:</label>
+                    <input type="text" required placeholder="Введите имя">
+
+                    <label>Email:</label>
+                    <input type="email" required placeholder="Введите email">
+
+                    <label>Текст комментария:</label>
+                    <textarea rows="5" required placeholder="Ваше сообщение..."></textarea>
+
+                    <button type="submit" class="submit-btn">ОТПРАВИТЬ</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Функция для переключения страниц
+        function openPage(pageName, element) {
+            // 1. Скрываем все страницы с классом "page"
+            var i, pages, buttons;
+            pages = document.getElementsByClassName("page");
+            for (i = 0; i < pages.length; i++) {
+                pages[i].classList.remove("show");
+            }
+
+            // 2. Убираем подсветку у всех кнопок
+            buttons = document.getElementsByClassName("menu-btn");
+            for (i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove("active");
+            }
+
+            // 3. Показываем нужную страницу и подсвечиваем кнопку
+            document.getElementById(pageName).classList.add("show");
+            element.classList.add("active");
+        }
+    </script>
+
+</body>
+</html>
